@@ -1,0 +1,54 @@
+.make-margins-paddings(@size: 56, @decrement: 8) when (@size >= 0) {
+  .make-margins-paddings(@size - @decrement);
+
+  @size-px: ~'@{size}px';
+  @index: @size / @decrement;
+  .m-@{index} {
+    margin: @size-px;
+  }
+  .mt-@{index} {
+    margin-top: @size-px;
+  }
+  .mr-@{index} {
+    margin-right: @size-px;
+  }
+  .mb-@{index} {
+    margin-bottom: @size-px;
+  }
+  .ml-@{index} {
+    margin-left: @size-px;
+  }
+  .mx-@{index} {
+    margin-left: @size-px;
+    margin-right: @size-px;
+  }
+  .my-@{index} {
+    margin-top: @size-px;
+    margin-bottom: @size-px;
+  }
+  .p-@{index} {
+    padding: @size-px;
+  }
+  .pt-@{index} {
+    padding-top: @size-px;
+  }
+  .pr-@{index} {
+    padding-right: @size-px;
+  }
+  .pb-@{index} {
+    padding-bottom: @size-px;
+  }
+  .pl-@{index} {
+    padding-left: @size-px;
+  }
+  .px-@{index} {
+    padding-left: @size-px;
+    padding-right: @size-px;
+  }
+  .py-@{index} {
+    padding-top: @size-px;
+    padding-bottom: @size-px;
+  }
+}
+
+.make-margins-paddings();
